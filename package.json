@@ -13,7 +13,8 @@
     "inspect:help": "npx -y @modelcontextprotocol/inspector --help"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.18.1"
+    "@modelcontextprotocol/sdk": "^1.18.1",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",

@@ -18,6 +18,17 @@ Minimal TypeScript MCP server starter with stdio transport, protocol documentati
 - Add tools/resources/prompts to the `McpServer` instance created by `createMcpServer`.
 - Runtime entrypoint: `src/index.ts`.
 
+## Included MCP capabilities
+
+- Tool: `echo`
+  - Inputs: `message` (`string`), `uppercase` (`boolean`, optional)
+  - Behavior: returns input text, optionally uppercased.
+- Resource: `app://status`
+  - Returns JSON status payload with server metadata and enabled capability categories.
+- Prompt: `summarize`
+  - Input argument: `topic` (`string`)
+  - Returns a ready-to-use user message template for concise summarization.
+
 ## Skill
 
 - Skill location: `skills/mcp-builder`.
