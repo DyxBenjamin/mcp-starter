@@ -1,0 +1,220 @@
+{
+  "sourceUrl": "https://modelcontextprotocol.io/llms.txt",
+  "generatedAt": "2026-02-27T16:41:04.927Z",
+  "total": 35,
+  "succeeded": 35,
+  "failed": 0,
+  "records": [
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/develop/build-client.md",
+      "localPath": "docs/develop/build-client.md",
+      "sha256": "9148524df490021f85f24967afefe7a2cba7025ca00a5a715aef1654c817f527",
+      "downloadedAt": "2026-02-27T16:41:03.405Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/develop/build-server.md",
+      "localPath": "docs/develop/build-server.md",
+      "sha256": "52781057973f913017961049188b8fb151a076f7e6dd25566ea186a121264d0d",
+      "downloadedAt": "2026-02-27T16:41:03.576Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/develop/connect-local-servers.md",
+      "localPath": "docs/develop/connect-local-servers.md",
+      "sha256": "62fe2ec0c78851b17a390f1993e4c94c6c15a5d4c2e6a9008e0e0066602f1c70",
+      "downloadedAt": "2026-02-27T16:41:03.573Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/develop/connect-remote-servers.md",
+      "localPath": "docs/develop/connect-remote-servers.md",
+      "sha256": "d1cd7d6508489205fc95a739d97d731c1329396780ac354b1d6f34fba9fb433c",
+      "downloadedAt": "2026-02-27T16:41:03.574Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/getting-started/intro.md",
+      "localPath": "docs/getting-started/intro.md",
+      "sha256": "c16c861f7c5f3c4d1a14aed421126060348e591240a7b95ce4d0a49033331f86",
+      "downloadedAt": "2026-02-27T16:41:03.559Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/learn/architecture.md",
+      "localPath": "docs/learn/architecture.md",
+      "sha256": "31ed9ee520d471f65b594179d112408bb88a26e7815d83bbc3d9c01a0cbe8178",
+      "downloadedAt": "2026-02-27T16:41:03.748Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/learn/client-concepts.md",
+      "localPath": "docs/learn/client-concepts.md",
+      "sha256": "43545e09c2caf321cf26fc35fe1ca20a00ce2d99eb5b99ebc9b7e01eabd1a1e9",
+      "downloadedAt": "2026-02-27T16:41:03.749Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/learn/server-concepts.md",
+      "localPath": "docs/learn/server-concepts.md",
+      "sha256": "0a657230d6b3d7c5db83bc1744860dde8ee683e4489a26e493892fd156b7b727",
+      "downloadedAt": "2026-02-27T16:41:03.758Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/sdk.md",
+      "localPath": "docs/sdk.md",
+      "sha256": "e7529e433a6dc3f29bb5511ae49b3f9ba2dca529dcb83553056276f8fb4dca88",
+      "downloadedAt": "2026-02-27T16:41:03.887Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/tools/inspector.md",
+      "localPath": "docs/tools/inspector.md",
+      "sha256": "d62454c752474bac8a4a7fa6311ff6ec8175fe4911aa71b3f4d9b9543608fff1",
+      "downloadedAt": "2026-02-27T16:41:03.869Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/tutorials/security/authorization.md",
+      "localPath": "docs/tutorials/security/authorization.md",
+      "sha256": "ef16b1ce8c27bd8ca2fe3b428d81257b55d085347bfafb91dfb1809a76dcc1a8",
+      "downloadedAt": "2026-02-27T16:41:03.898Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices.md",
+      "localPath": "docs/tutorials/security/security_best_practices.md",
+      "sha256": "251a7b60221b8a387bf05738b7d5a90e1c877e0e66e82a8fe195dd7472fe9e80",
+      "downloadedAt": "2026-02-27T16:41:03.901Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/architecture/index.md",
+      "localPath": "specification/2025-11-25/architecture/index.md",
+      "sha256": "6fb37df76b8fed727dda439d673f5df693a061f79e1bf6ae57af822e5956f3cd",
+      "downloadedAt": "2026-02-27T16:41:04.316Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization.md",
+      "localPath": "specification/2025-11-25/basic/authorization.md",
+      "sha256": "f4dfb3befa14302a68d7aa1c411e36f602172425987979fe2c6aa4f24c07fb1c",
+      "downloadedAt": "2026-02-27T16:41:04.044Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/basic/index.md",
+      "localPath": "specification/2025-11-25/basic/index.md",
+      "sha256": "15fb3d0aeb28aac368131b621abc38267c140361b38bf460390c2779323654d1",
+      "downloadedAt": "2026-02-27T16:41:04.042Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/basic/lifecycle.md",
+      "localPath": "specification/2025-11-25/basic/lifecycle.md",
+      "sha256": "75d18dcdd60104e44e25db48ce34653a44cd626b5319985ed276cead2c109fc8",
+      "downloadedAt": "2026-02-27T16:41:04.076Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports.md",
+      "localPath": "specification/2025-11-25/basic/transports.md",
+      "sha256": "27afed8b8ff36b06b658cd0fc9a4dee40066d148635024b9f35745fa25ceaa24",
+      "downloadedAt": "2026-02-27T16:41:04.207Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/cancellation.md",
+      "localPath": "specification/2025-11-25/basic/utilities/cancellation.md",
+      "sha256": "8c5e39937def872ea6cbc50cdd66acff4e076cf2330e06be3c8fc2a2479aec26",
+      "downloadedAt": "2026-02-27T16:41:04.208Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/ping.md",
+      "localPath": "specification/2025-11-25/basic/utilities/ping.md",
+      "sha256": "a82b2839a7362fe8e8885890c50b4caa1268ec2f634d9bc7b5803f0d7335ed54",
+      "downloadedAt": "2026-02-27T16:41:04.216Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/progress.md",
+      "localPath": "specification/2025-11-25/basic/utilities/progress.md",
+      "sha256": "f7fa7191a7d154c177ea6b901651a75f4d8b5a44a62b4ca93b5159cf4ef5c324",
+      "downloadedAt": "2026-02-27T16:41:04.342Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks.md",
+      "localPath": "specification/2025-11-25/basic/utilities/tasks.md",
+      "sha256": "a4d961521f2242ee0fadc506a28d19739517d18c0d4d84ea1985a183d35acb5c",
+      "downloadedAt": "2026-02-27T16:41:04.344Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/changelog.md",
+      "localPath": "specification/2025-11-25/changelog.md",
+      "sha256": "0c6f3a313c714462168ef29d3ba07b45e185405ef1fd06d324c7c6eea51250a1",
+      "downloadedAt": "2026-02-27T16:41:04.342Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation.md",
+      "localPath": "specification/2025-11-25/client/elicitation.md",
+      "sha256": "49dd9f301c4d22a7c19deb2b61d9fd70045a0bd4429b2dd685d2b40648822e7d",
+      "downloadedAt": "2026-02-27T16:41:04.462Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/client/roots.md",
+      "localPath": "specification/2025-11-25/client/roots.md",
+      "sha256": "9fd1ca88e2586a97980c52cba653c930445d05134e323dfc1abd0b79a38e66d8",
+      "downloadedAt": "2026-02-27T16:41:04.481Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/client/sampling.md",
+      "localPath": "specification/2025-11-25/client/sampling.md",
+      "sha256": "29bb03e95005cc822be89a67047a6af0ded0cfb807e0dffa95d2c1597a24c105",
+      "downloadedAt": "2026-02-27T16:41:04.472Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/index.md",
+      "localPath": "specification/2025-11-25/index.md",
+      "sha256": "37bf1590e3e51df1f06b64c8cc80683cec309305fca4fbe7a4a4146231c3eb8f",
+      "downloadedAt": "2026-02-27T16:41:04.477Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/schema.md",
+      "localPath": "specification/2025-11-25/schema.md",
+      "sha256": "8768b244a46f829c92e227a8d9009fb0a10bd570a95f997c8bf0c713affc3f9f",
+      "downloadedAt": "2026-02-27T16:41:04.652Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/server/index.md",
+      "localPath": "specification/2025-11-25/server/index.md",
+      "sha256": "b378e1c5ec7838431ad474653a050d20b4324340f3fa15770495b21c928b5d7d",
+      "downloadedAt": "2026-02-27T16:41:04.599Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/server/prompts.md",
+      "localPath": "specification/2025-11-25/server/prompts.md",
+      "sha256": "12075a0f0e0aa3e101593038075b29f80e69b0799ba312baf6306e70d65bf762",
+      "downloadedAt": "2026-02-27T16:41:04.636Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/server/resources.md",
+      "localPath": "specification/2025-11-25/server/resources.md",
+      "sha256": "9c6a4cfef677b44c72914ae96617c2392e9880f4b9e75ab2365c9168e1425ab2",
+      "downloadedAt": "2026-02-27T16:41:04.646Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools.md",
+      "localPath": "specification/2025-11-25/server/tools.md",
+      "sha256": "4be1b0722319434a49c788d6c7a7db97fa61178f25bc51d4f72c99b9feb5670e",
+      "downloadedAt": "2026-02-27T16:41:04.797Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/server/utilities/completion.md",
+      "localPath": "specification/2025-11-25/server/utilities/completion.md",
+      "sha256": "542fbbb777275a5db613c557d65b2fe391588868795d71118455128891c30a03",
+      "downloadedAt": "2026-02-27T16:41:04.804Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/server/utilities/logging.md",
+      "localPath": "specification/2025-11-25/server/utilities/logging.md",
+      "sha256": "f69bd220d01d86902aeeaedfc4d71667d1a7059c50cde5562e48bf0bd33039cb",
+      "downloadedAt": "2026-02-27T16:41:04.849Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/2025-11-25/server/utilities/pagination.md",
+      "localPath": "specification/2025-11-25/server/utilities/pagination.md",
+      "sha256": "07d38f31a2a2c4f6eb8b3442612adf03452af84d77c7bec4f0b05122c0425ed6",
+      "downloadedAt": "2026-02-27T16:41:04.794Z"
+    },
+    {
+      "sourceUrl": "https://modelcontextprotocol.io/specification/versioning.md",
+      "localPath": "specification/versioning.md",
+      "sha256": "54d4d2131e760bd0988b3a3e05a048dc7733a5be771cee59af1d42b4a53c7f70",
+      "downloadedAt": "2026-02-27T16:41:04.927Z"
+    }
+  ],
+  "failures": []
+}

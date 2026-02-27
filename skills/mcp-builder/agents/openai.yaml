@@ -1,0 +1,4 @@
+interface:
+  display_name: "MCP Builder"
+  short_description: "Build, edit, and extend MCP servers"
+  default_prompt: "Use $mcp-builder to create, edit, or extend an MCP server with tests."

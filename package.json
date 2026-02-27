@@ -1,0 +1,25 @@
+{
+  "name": "mcp-starter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsup src/index.ts --format esm --dts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "protocol:sync": "tsx tools/sync-protocol-docs.ts",
+    "inspect": "npx -y @modelcontextprotocol/inspector npx -y tsx src/index.ts",
+    "inspect:help": "npx -y @modelcontextprotocol/inspector --help"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
