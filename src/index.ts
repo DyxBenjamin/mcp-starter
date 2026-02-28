@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
@@ -13,7 +14,7 @@ export interface StartServerDependencies {
 }
 
 export async function startServer(dependencies: StartServerDependencies = {}): Promise<void> {
-  const server = dependencies.createServer?.() ?? createMcpServer();
+  const server = dependencies.createServer?.() ?? createMcpServer({ profile: "operable" });
   const transport = dependencies.createTransport?.() ?? new StdioServerTransport();
   await server.connect(transport);
 }

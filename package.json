@@ -1,16 +1,43 @@
 {
   "name": "mcp-starter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "description": "Agent-ready MCP starter with operable discovery resources, templates, prompts, and publishable package wiring.",
   "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/DyxBenjamin/mcp-starter",
+  "bugs": {
+    "url": "https://github.com/DyxBenjamin/mcp-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DyxBenjamin/mcp-starter.git"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "docs/protocol",
+    "docs/publishing.md"
+  ],
+  "bin": {
+    "mcp-starter": "dist/index.js"
+  },
   "scripts": {
     "dev": "tsx src/index.ts",
-    "build": "tsup src/index.ts --format esm --dts",
+    "catalog:generate": "tsx tools/generate-catalog.ts",
+    "build": "npm run catalog:generate && tsup src/index.ts --format esm --dts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "protocol:sync": "tsx tools/sync-protocol-docs.ts",
     "inspect": "npx -y @modelcontextprotocol/inspector npx -y tsx src/index.ts",
-    "inspect:help": "npx -y @modelcontextprotocol/inspector --help"
+    "inspect:help": "npx -y @modelcontextprotocol/inspector --help",
+    "pack:dry-run": "npm pack --dry-run"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.1",
