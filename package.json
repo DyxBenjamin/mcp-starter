@@ -1,6 +1,6 @@
 {
   "name": "mcp-starter",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Agent-ready MCP starter with operable discovery resources, templates, prompts, and publishable package wiring.",
   "type": "module",
@@ -28,26 +28,31 @@
   "bin": {
     "mcp-starter": "dist/index.js"
   },
+  "engines": {
+    "node": ">=22.12"
+  },
   "scripts": {
     "dev": "tsx src/index.ts",
     "catalog:generate": "tsx tools/generate-catalog.ts",
-    "build": "npm run catalog:generate && tsup src/index.ts --format esm --dts",
+    "build": "npm run catalog:generate && tsdown",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "protocol:sync": "tsx tools/sync-protocol-docs.ts",
-    "inspect": "npx -y @modelcontextprotocol/inspector npx -y tsx src/index.ts",
+    "inspect": "npx -y @modelcontextprotocol/inspector --config inspector.config.json --server mcp-starter",
+    "inspect:legacy": "npx -y @modelcontextprotocol/inspector --config inspector.config.json --server mcp-starter-legacy",
     "inspect:help": "npx -y @modelcontextprotocol/inspector --help",
     "pack:dry-run": "npm pack --dry-run"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.18.1",
-    "zod": "^4.1.12"
+    "@modelcontextprotocol/server": "^2.2.0",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@types/node": "^24.5.2",
-    "tsup": "^8.5.0",
-    "tsx": "^4.20.6",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "@modelcontextprotocol/client": "^2.2.0",
+    "@types/node": "^24.12.0",
+    "tsdown": "^0.23.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2"
   }
 }

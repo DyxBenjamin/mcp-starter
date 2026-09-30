@@ -40,8 +40,8 @@ export const TOOL_CATALOG: readonly ToolCatalogEntry[] = [
     ],
     "requiresRuntimeContext": false,
     "docs": [
-      "docs-learn-server-concepts",
-      "docs-sdk"
+      "docs-2026-07-28-learn-server-concepts",
+      "docs-2026-07-28-sdk"
     ]
   },
   {
@@ -94,9 +94,9 @@ export const TOOL_CATALOG: readonly ToolCatalogEntry[] = [
     ],
     "requiresRuntimeContext": true,
     "docs": [
-      "docs-develop-build-server",
-      "docs-tools-inspector",
-      "specification-2025-11-25-basic-lifecycle"
+      "docs-2026-07-28-develop-build-server",
+      "docs-2026-07-28-tools-inspector",
+      "specification-2026-07-28-server-discover"
     ]
   }
 ] as const;
@@ -116,7 +116,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "Use as a quick liveness and capability signal."
     ],
     "docs": [
-      "docs-sdk"
+      "docs-2026-07-28-sdk"
     ]
   },
   {
@@ -133,7 +133,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "Agents should read this before making non-trivial tool calls."
     ],
     "docs": [
-      "docs-learn-server-concepts"
+      "docs-2026-07-28-learn-server-concepts"
     ]
   },
   {
@@ -150,7 +150,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "Use this to separate visible tools from safely callable tools."
     ],
     "docs": [
-      "docs-learn-server-concepts"
+      "docs-2026-07-28-learn-server-concepts"
     ]
   },
   {
@@ -167,7 +167,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "Read this before using resource templates."
     ],
     "docs": [
-      "docs-learn-server-concepts"
+      "docs-2026-07-28-learn-server-concepts"
     ]
   },
   {
@@ -184,7 +184,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "Use to understand when prompts are scaffolding versus domain prompts."
     ],
     "docs": [
-      "docs-learn-server-concepts"
+      "docs-2026-07-28-learn-server-concepts"
     ]
   },
   {
@@ -201,7 +201,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "Use this instead of discovery tool calls when defaults already exist."
     ],
     "docs": [
-      "docs-develop-connect-local-servers"
+      "docs-2026-07-28-develop-connect-local-servers"
     ]
   },
   {
@@ -218,7 +218,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "This is the human-readable operational quickstart."
     ],
     "docs": [
-      "docs-tools-inspector"
+      "docs-2026-07-28-tools-inspector"
     ]
   },
   {
@@ -235,7 +235,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "Use `app://catalog/resources` to find valid slugs if unsure."
     ],
     "docs": [
-      "docs-getting-started-intro"
+      "docs-2026-07-28-getting-started-intro"
     ]
   },
   {
@@ -252,7 +252,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "Use operation ids from the tool catalog."
     ],
     "docs": [
-      "docs-sdk"
+      "docs-2026-07-28-sdk"
     ]
   },
   {
@@ -269,7 +269,7 @@ export const RESOURCE_CATALOG: readonly ResourceCatalogEntry[] = [
       "Prefer examples before first call when a tool has runtime defaults or permissions."
     ],
     "docs": [
-      "docs-tools-inspector"
+      "docs-2026-07-28-tools-inspector"
     ]
   }
 ] as const;
@@ -291,7 +291,7 @@ export const PROMPT_CATALOG: readonly PromptCatalogEntry[] = [
       "summarize(topic=\"MCP adoption plan\")"
     ],
     "docs": [
-      "docs-learn-client-concepts"
+      "docs-2026-07-28-learn-client-concepts"
     ]
   },
   {
@@ -310,8 +310,8 @@ export const PROMPT_CATALOG: readonly PromptCatalogEntry[] = [
       "server_usage_guide(goal=\"integrate an admin workflow\")"
     ],
     "docs": [
-      "docs-tools-inspector",
-      "docs-develop-build-server"
+      "docs-2026-07-28-tools-inspector",
+      "docs-2026-07-28-develop-build-server"
     ]
   }
 ] as const;

@@ -104,10 +104,9 @@ Rules:
 The entrypoint must do only the following:
 
 1. Resolve runtime configuration.
-2. Construct the server.
-3. Construct the transport.
-4. Connect the server to the transport.
-5. Emit deterministic startup failure behavior.
+2. Pass a server factory to the serving entry: `serveStdio(factory)` from `@modelcontextprotocol/server/stdio` for stdio, `createMcpHandler(factory)` for HTTP. Both serve protocol `2026-07-28` (`server/discover`) and the 2025-era `initialize` handshake; a server connected directly to `StdioServerTransport` speaks only the 2025 era.
+3. Close the serving handle on `SIGINT` and `SIGTERM`.
+4. Emit deterministic startup failure behavior.
 
 The entrypoint must not contain business logic, catalog generation logic, or capability definitions.
 

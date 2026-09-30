@@ -5,6 +5,17 @@ Agent-ready TypeScript MCP starter with two profiles:
 - `core`: minimal transport/runtime profile with one tool, one fixed resource, and one prompt
 - `operable`: recommended default profile with discovery resources, resource templates, usage guidance, runtime defaults, and permission-aware examples
 
+## Stack and protocol
+
+- MCP TypeScript SDK v2 (`@modelcontextprotocol/server`) with Zod 4 schemas (`z.object(...)` for `inputSchema`, `outputSchema`, and `argsSchema`)
+- stdio entrypoint built on `serveStdio`, which serves both protocol eras from the same server factory:
+  - `2026-07-28` (stateless): `server/discover`, per-request `_meta` protocol version, `resultType`, and `ttlMs`/`cacheScope` cache hints
+  - `2025-11-25` and earlier: the `initialize` handshake
+- unknown resource URIs throw `ResourceNotFoundError` (JSON-RPC `-32602`)
+- Node.js `>=22.12`, TypeScript 7 (`tsc --noEmit`), tsdown for the ESM bundle and `.d.ts`, Vitest 5
+- the `echo` tool demonstrates structured output (`outputSchema` + `structuredContent`) and tool annotations (`readOnlyHint`, `idempotentHint`, `openWorldHint`)
+- Roots, Sampling, and Logging are deprecated as of `2026-07-28`; the starter does not use them and diagnostics go to `stderr`
+
 ## Commands
 
 - `npm run dev`: start the operable server profile with stdio transport
@@ -13,20 +24,21 @@ Agent-ready TypeScript MCP starter with two profiles:
 - `npm run build`: regenerate catalogs and build the package entrypoint
 - `npm run typecheck`: run TypeScript validation
 - `npm test`: run deterministic unit tests
-- `npm run protocol:sync`: refresh the MCP protocol docs under `docs/protocol`
-- `npm run inspect`: launch MCP Inspector against the local source server
+- `npm run protocol:sync`: refresh `docs/protocol` with the pages of the latest released MCP protocol version
+- `npm run inspect`: launch MCP Inspector against the local source server on protocol `2026-07-28` (`server/discover`)
+- `npm run inspect:legacy`: launch MCP Inspector against the same server on the `2025-11-25` `initialize` handshake
 - `npm run inspect:help`: show MCP Inspector CLI options
 - `npm run pack:dry-run`: verify package contents and publish surface
 
 ## Implementation Plan
 
-The detailed implementation and hardening plan lives in [OPERABLE_MCP_IMPLEMENTATION_PLAN.md](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/OPERABLE_MCP_IMPLEMENTATION_PLAN.md).
+The detailed implementation and hardening plan lives in [OPERABLE_MCP_IMPLEMENTATION_PLAN.md](OPERABLE_MCP_IMPLEMENTATION_PLAN.md).
 
 ## Profiles
 
 ### Core profile
 
-Available through `createCoreMcpServer()` in [src/server.ts](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/src/server.ts).
+Available through `createCoreMcpServer()` in [src/server.ts](src/server.ts).
 
 Includes:
 - tool: `echo`
@@ -94,30 +106,30 @@ This models the “visible vs usable” distinction real agent-facing servers ne
 ## Docs-derived generated artifacts
 
 Generated modules live in `src/generated/`:
-- [catalog.generated.ts](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/src/generated/catalog.generated.ts)
-- [runtime-contracts.generated.ts](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/src/generated/runtime-contracts.generated.ts)
-- [docs-index.generated.ts](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/src/generated/docs-index.generated.ts)
+- [catalog.generated.ts](src/generated/catalog.generated.ts)
+- [runtime-contracts.generated.ts](src/generated/runtime-contracts.generated.ts)
+- [docs-index.generated.ts](src/generated/docs-index.generated.ts)
 
-They are rebuilt by [tools/generate-catalog.ts](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/tools/generate-catalog.ts) using:
-- source seeds in [catalog-seed.ts](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/src/catalog-seed.ts)
-- the synced protocol docs manifest in [docs/protocol/manifest.json](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/docs/protocol/manifest.json)
+They are rebuilt by [tools/generate-catalog.ts](tools/generate-catalog.ts) using:
+- source seeds in [catalog-seed.ts](src/catalog-seed.ts)
+- the synced protocol docs manifest in [docs/protocol/manifest.json](docs/protocol/manifest.json)
 
 ## Inspector / DevTools
 
 This starter includes integration with **MCP Inspector**.
 
-1. Run `npm run inspect`
+1. Run `npm run inspect` (modern era) or `npm run inspect:legacy` (2025-era clients); both servers are declared in [inspector.config.json](inspector.config.json) with their `protocolEra`
 2. Open the Inspector URL shown in the terminal
-3. Inspect tools, fixed resources, resource templates, prompts, and ping behavior
+3. Inspect tools, fixed resources, resource templates, prompts, and the negotiated protocol era
 
 ## Packaging and distribution
 
-This package now includes:
+This package includes:
 - a `bin` entry (`mcp-starter`)
 - a constrained `files` whitelist
 - repository, bugs, homepage, and license metadata
-- a publish workflow template at [publish.yml](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/.github/workflows/publish.yml)
-- a publication checklist at [publishing.md](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/docs/publishing.md)
+- a publish workflow template at [publish.yml](.github/workflows/publish.yml)
+- a publication checklist at [publishing.md](docs/publishing.md)
 
 Recommended execution modes:
 1. Source mode: `npx tsx src/index.ts` (local development, cwd-dependent)
@@ -125,4 +137,4 @@ Recommended execution modes:
 
 ## Skill
 
-The reusable implementation workflow lives in [skills/mcp-builder/SKILL.md](/Users/qrsof/Documents/benjamin/devclusters/workspaces/@dyxbenjamin/AI/mcp-starter/skills/mcp-builder/SKILL.md).
+The reusable implementation workflow lives in [skills/mcp-builder/SKILL.md](skills/mcp-builder/SKILL.md).

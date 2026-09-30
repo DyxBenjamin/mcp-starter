@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "mcp-starter": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "tsx",
+        "src/index.ts"
+      ],
+      "protocolEra": "modern"
+    },
+    "mcp-starter-legacy": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "tsx",
+        "src/index.ts"
+      ],
+      "protocolEra": "legacy"
+    },
+    "mcp-starter-dist": {
+      "command": "node",
+      "args": [
+        "dist/index.js"
+      ],
+      "protocolEra": "modern"
+    }
+  }
+}

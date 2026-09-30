@@ -21,6 +21,7 @@ Deliver MCP servers that are production-credible, agent-legible, and operational
 8. Generated catalogs must be deterministic and safe to regenerate.
 9. Documentation must state execution mode assumptions (`source` vs `package`) whenever distribution is in scope.
 10. Do not hand-wave missing implementation. If context is incomplete, isolate the unknown area behind a clearly bounded interface.
+11. Target MCP protocol `2026-07-28` with the TypeScript SDK v2 (`@modelcontextprotocol/server`) and Zod 4, keeping 2025-era clients served through the same factory. Handlers hold no per-connection state, and new servers do not adopt the deprecated Roots, Sampling, or Logging features.
 
 ## When This Skill Applies
 

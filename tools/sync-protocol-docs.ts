@@ -1,7 +1,8 @@
 import { createHash } from "node:crypto";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { selectLatestProtocolUrls } from "./protocol-version.js";
 
 export const DEFAULT_PROTOCOL_SOURCE_URL = "https://modelcontextprotocol.io/llms.txt";
 export const DEFAULT_PROTOCOL_OUTPUT_DIR = path.resolve(process.cwd(), "docs/protocol");
@@ -179,7 +180,8 @@ export async function syncProtocolDocs(options: SyncProtocolDocsOptions = {}): P
   }
   const sourceContent = await sourceResponse.text();
   const links = extractMarkdownLinks(sourceContent);
-  const protocolUrls = normalizeProtocolUrls(links);
+  const protocolUrls = selectLatestProtocolUrls(normalizeProtocolUrls(links));
+  await Promise.all(["docs", "specification"].map((dir) => rm(path.join(outputDir, dir), { recursive: true, force: true })));
 
   const failures: SyncFailure[] = [];
   const records: ProtocolDocRecord[] = [];

@@ -139,6 +139,11 @@ For each tool added:
 3. The catalogs should expose at least one example invocation.
 4. If runtime defaults can fill missing values, state exactly which values can be inherited.
 5. If the tool is restricted, keep it visible but return a semantic authorization failure when access is missing.
+6. Schemas are Zod 4 objects (`z.object({...})`) passed to `inputSchema` and `outputSchema`; raw shapes are deprecated in SDK v2.
+7. A tool with a stable result shape declares `outputSchema` and returns `structuredContent` alongside the text content.
+8. The tool declares `annotations` (`readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`) that match its real side effects.
+9. The handler keeps no per-connection state: under protocol `2026-07-28` every request is independent, so cross-call state travels as server-minted handles in tool arguments.
+10. Missing client input is requested in-band by returning `inputRequired(...)` (multi round-trip requests), never through Roots or Sampling, which are deprecated.
 
 A listed tool without enough context to invoke safely is not a completed extension.
 

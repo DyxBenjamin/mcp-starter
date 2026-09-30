@@ -421,7 +421,7 @@ The build must always regenerate catalogs first.
 
 Required sequence:
 1. `catalog:generate`
-2. `tsup build`
+2. `tsdown` build
 
 This prevents stale generated artifacts from shipping.
 

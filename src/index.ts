@@ -1,27 +1,40 @@
 #!/usr/bin/env node
+/**
+ * @file CLI entry point: exports startServer, which serves the operable MCP server over stdio, and handles shutdown signals.
+ * @tags cli, stdio-transport, mcp-server
+ * @related src/server.ts, tests/starter-server.spec.ts
+ */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import type { McpServerFactory } from "@modelcontextprotocol/server";
+import { serveStdio, type StdioServerHandle } from "@modelcontextprotocol/server/stdio";
 import { createMcpServer } from "./server.js";
 
-export interface ConnectableServer {
-  connect(transport: StdioServerTransport): Promise<void>;
-}
+export type ServeFunction = (factory: McpServerFactory) => StdioServerHandle;
 
 export interface StartServerDependencies {
-  readonly createServer?: () => ConnectableServer;
-  readonly createTransport?: () => StdioServerTransport;
+  readonly createServer?: McpServerFactory;
+  readonly serve?: ServeFunction;
 }
 
-export async function startServer(dependencies: StartServerDependencies = {}): Promise<void> {
-  const server = dependencies.createServer?.() ?? createMcpServer({ profile: "operable" });
-  const transport = dependencies.createTransport?.() ?? new StdioServerTransport();
-  await server.connect(transport);
+/**
+ * Serves the MCP server over stdio for both protocol eras: `server/discover` (2026-07-28)
+ * and the `initialize` handshake (2025-11-25 and earlier).
+ */
+export function startServer(dependencies: StartServerDependencies = {}): StdioServerHandle {
+  const createServer = dependencies.createServer ?? (() => createMcpServer({ profile: "operable" }));
+  const serve = dependencies.serve ?? serveStdio;
+  return serve(createServer);
 }
 
-async function main(): Promise<void> {
+function main(): void {
   try {
-    await startServer();
+    const handle = startServer();
+    const shutdown = (): void => {
+      void handle.close();
+    };
+    process.once("SIGINT", shutdown);
+    process.once("SIGTERM", shutdown);
   } catch (error: unknown) {
     const message = error instanceof Error ? error.stack ?? error.message : String(error);
     process.stderr.write(`Failed to start MCP server: ${message}\n`);
@@ -32,5 +45,5 @@ async function main(): Promise<void> {
 const currentFilePath = fileURLToPath(import.meta.url);
 const entryPath = process.argv[1] ? path.resolve(process.argv[1]) : "";
 if (entryPath === currentFilePath) {
-  void main();
+  main();
 }

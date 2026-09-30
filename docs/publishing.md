@@ -24,5 +24,5 @@ This starter includes publish-ready package wiring, but the repository remains `
 
 1. `npm run build`
 2. `npm run pack:dry-run`
-3. `node dist/index.js` and verify MCP handshake with Inspector
-4. `npx -y @modelcontextprotocol/inspector node dist/index.js`
+3. `node dist/index.js` and verify with Inspector that both `server/discover` (2026-07-28) and the `initialize` handshake (2025-11-25) succeed
+4. `npx -y @modelcontextprotocol/inspector --cli --config inspector.config.json --server mcp-starter-dist --method tools/list` runs the built `dist/index.js` on protocol `2026-07-28` (the Inspector defaults to the `legacy` era, so the config pins `protocolEra`)

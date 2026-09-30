@@ -58,7 +58,7 @@ export const TOOL_CATALOG_SEED: readonly ToolCatalogEntry[] = [
       "This tool has no runtime dependencies and can be used from the core profile."
     ],
     requiresRuntimeContext: false,
-    docs: ["docs-learn-server-concepts", "docs-sdk"]
+    docs: ["docs-2026-07-28-learn-server-concepts", "docs-2026-07-28-sdk"]
   },
   {
     operationId: "admin-echo",
@@ -109,7 +109,7 @@ export const TOOL_CATALOG_SEED: readonly ToolCatalogEntry[] = [
       "This tool demonstrates how hidden runtime defaults become MCP-visible through catalog resources."
     ],
     requiresRuntimeContext: true,
-    docs: ["docs-develop-build-server", "docs-tools-inspector", "specification-2025-11-25-basic-lifecycle"]
+    docs: ["docs-2026-07-28-develop-build-server", "docs-2026-07-28-tools-inspector", "specification-2026-07-28-server-discover"]
   }
 ] as const;
 
@@ -123,7 +123,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "application/json",
     examples: ["app://status"],
     usageNotes: ["Use as a quick liveness and capability signal."],
-    docs: ["docs-sdk"]
+    docs: ["docs-2026-07-28-sdk"]
   },
   {
     name: "index",
@@ -134,7 +134,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "application/json",
     examples: ["app://index"],
     usageNotes: ["Agents should read this before making non-trivial tool calls."],
-    docs: ["docs-learn-server-concepts"]
+    docs: ["docs-2026-07-28-learn-server-concepts"]
   },
   {
     name: "catalog-tools",
@@ -145,7 +145,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "application/json",
     examples: ["app://catalog/tools"],
     usageNotes: ["Use this to separate visible tools from safely callable tools."],
-    docs: ["docs-learn-server-concepts"]
+    docs: ["docs-2026-07-28-learn-server-concepts"]
   },
   {
     name: "catalog-resources",
@@ -156,7 +156,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "application/json",
     examples: ["app://catalog/resources"],
     usageNotes: ["Read this before using resource templates."],
-    docs: ["docs-learn-server-concepts"]
+    docs: ["docs-2026-07-28-learn-server-concepts"]
   },
   {
     name: "catalog-prompts",
@@ -167,7 +167,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "application/json",
     examples: ["app://catalog/prompts"],
     usageNotes: ["Use to understand when prompts are scaffolding versus domain prompts."],
-    docs: ["docs-learn-server-concepts"]
+    docs: ["docs-2026-07-28-learn-server-concepts"]
   },
   {
     name: "runtime-defaults",
@@ -178,7 +178,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "application/json",
     examples: ["app://runtime/defaults"],
     usageNotes: ["Use this instead of discovery tool calls when defaults already exist."],
-    docs: ["docs-develop-connect-local-servers"]
+    docs: ["docs-2026-07-28-develop-connect-local-servers"]
   },
   {
     name: "usage",
@@ -189,7 +189,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "text/markdown",
     examples: ["app://usage"],
     usageNotes: ["This is the human-readable operational quickstart."],
-    docs: ["docs-tools-inspector"]
+    docs: ["docs-2026-07-28-tools-inspector"]
   },
   {
     name: "doc-template",
@@ -200,7 +200,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "text/markdown",
     examples: ["app://doc/docs-sdk"],
     usageNotes: ["Use `app://catalog/resources` to find valid slugs if unsure."],
-    docs: ["docs-getting-started-intro"]
+    docs: ["docs-2026-07-28-getting-started-intro"]
   },
   {
     name: "schema-template",
@@ -211,7 +211,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "application/json",
     examples: ["app://schema/admin-echo"],
     usageNotes: ["Use operation ids from the tool catalog."],
-    docs: ["docs-sdk"]
+    docs: ["docs-2026-07-28-sdk"]
   },
   {
     name: "example-template",
@@ -222,7 +222,7 @@ export const RESOURCE_CATALOG_SEED: readonly ResourceCatalogEntry[] = [
     mimeType: "application/json",
     examples: ["app://example/admin_echo"],
     usageNotes: ["Prefer examples before first call when a tool has runtime defaults or permissions."],
-    docs: ["docs-tools-inspector"]
+    docs: ["docs-2026-07-28-tools-inspector"]
   }
 ] as const;
 
@@ -240,7 +240,7 @@ export const PROMPT_CATALOG_SEED: readonly PromptCatalogEntry[] = [
     ],
     usageIntent: "Use for domain summaries after a resource read or a tool result.",
     examples: ["summarize(topic=\"MCP adoption plan\")"],
-    docs: ["docs-learn-client-concepts"]
+    docs: ["docs-2026-07-28-learn-client-concepts"]
   },
   {
     name: "server_usage_guide",
@@ -255,6 +255,6 @@ export const PROMPT_CATALOG_SEED: readonly PromptCatalogEntry[] = [
     ],
     usageIntent: "Use before first interaction or when handing the server to another agent.",
     examples: ["server_usage_guide(goal=\"integrate an admin workflow\")"],
-    docs: ["docs-tools-inspector", "docs-develop-build-server"]
+    docs: ["docs-2026-07-28-tools-inspector", "docs-2026-07-28-develop-build-server"]
   }
 ] as const;

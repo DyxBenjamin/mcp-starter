@@ -39,15 +39,15 @@ These tests prove process boot is operationally correct.
 
 Required assertions:
 
-1. The selected transport is constructed correctly.
-2. `connect` is invoked exactly once.
+1. The serving entry (`serveStdio` or `createMcpHandler`) receives the server factory exactly once.
+2. Integration tests connect a client in each supported protocol era: `2026-07-28` through `serveStdio(factory, { transport })` with a client pinned by `versionNegotiation: { mode: { pin: "2026-07-28" } }`, and `2025-11-25` through `server.connect(transport)` with a default client.
 3. Startup failures are trapped and surfaced predictably.
 4. The entrypoint does not duplicate business logic.
 5. Packaged execution path resolves the same entrypoint contract when distribution is in scope.
 
 Failure indications:
 
-1. Connect is skipped.
+1. The factory never reaches the serving entry, or only one protocol era is exercised.
 2. Startup throws without a bounded error path.
 3. Source-mode works but package-mode does not.
 
@@ -72,7 +72,7 @@ Required assertions per fixed resource:
 Required assertions per resource template:
 
 1. Valid variable values resolve correctly.
-2. Invalid values return stable “not found” or “unavailable” responses.
+2. Unknown values throw `ResourceNotFoundError` (JSON-RPC `-32602`); known values whose backing data is missing return a stable “unavailable” response.
 3. Optional completion behavior is stable if implemented.
 
 Required assertions per prompt:

@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { PROMPT_CATALOG_SEED, RESOURCE_CATALOG_SEED, TOOL_CATALOG_SEED } from "../src/catalog-seed.js";
+import { DOCS_INDEX } from "../src/generated/docs-index.generated.js";
 import {
   buildCatalogGenerationInput,
   buildDocsIndexEntries,
@@ -53,5 +55,14 @@ describe("catalog generation", () => {
     expect(output.modules.some((module) => module.path.endsWith("catalog.generated.ts"))).toBe(true);
     expect(output.modules.some((module) => module.contents.includes("TOOL_CATALOG"))).toBe(true);
     expect(output.modules.some((module) => module.contents.includes("DOCS_INDEX"))).toBe(true);
+  });
+
+  it("references only documentation slugs present in the synced docs index", () => {
+    const knownSlugs = new Set(DOCS_INDEX.map((entry) => entry.slug));
+    const referenced = [...TOOL_CATALOG_SEED, ...RESOURCE_CATALOG_SEED, ...PROMPT_CATALOG_SEED].flatMap(
+      (entry) => entry.docs
+    );
+
+    expect(referenced.filter((slug) => !knownSlugs.has(slug))).toEqual([]);
   });
 });
